@@ -44,7 +44,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let firstLocation = locations.first!
-        print(firstLocation)
+        // we are getting the location of the user here
         currentUserLocation = Location(title: "Current Location", subtitle: "", lat: firstLocation.coordinate.latitude, lng: firstLocation.coordinate.longitude)
         locationManager.stopUpdatingLocation()
     }
@@ -73,7 +73,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let distance = 200.0
         let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
         mapView.setRegion(region, animated: true)
+        
+        let lat = userLocation.coordinate.latitude
+        let lng = userLocation.coordinate.longitude
+        let offset = 0.00075
+        let coord1 = CLLocationCoordinate2D(latitude: lat - offset, longitude: lng - offset)
+        let coord2 = CLLocationCoordinate2D(latitude: lat, longitude: lng + offset)
+        let coord3 = CLLocationCoordinate2D(latitude: lat, longitude: lng - offset)
+        
+        // create 3 vehicle annotations and add them to the mapView
+        mapView.addAnnotations([
+            VehicleAnnotation(coordinate: coord1),
+            VehicleAnnotation(coordinate: coord2),
+            VehicleAnnotation(coordinate: coord3)
+        ])
     }
+    
+   
+    
     
     
 }
