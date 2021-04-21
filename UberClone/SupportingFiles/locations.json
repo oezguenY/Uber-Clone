@@ -1,4 +1,11 @@
 [
+    
+    {
+       "title":"My Home",
+       "subtitle":"Loehngrinstraße 20, Duisburg",
+       "lat":51.465440,
+       "lng":6.765880
+    },
    {
       "title":"Apple Union Square",
       "subtitle":"300 Post St, San Francisco",
