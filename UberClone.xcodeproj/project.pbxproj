@@ -16,6 +16,9 @@
 		E3BCAC3C262F741D00B55BAC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC3B262F741D00B55BAC /* LocationService.swift */; };
 		E3BCAC4026301F9D00B55BAC /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = E3BCAC3F26301F9D00B55BAC /* locations.json */; };
 		E3BCAC43263022E200B55BAC /* RideQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC42263022E200B55BAC /* RideQuote.swift */; };
+		E3BCAC46263023F900B55BAC /* RideQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC45263023F900B55BAC /* RideQuoteService.swift */; };
+		E3BCAC492630437800B55BAC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC482630437800B55BAC /* HomeViewController.swift */; };
+		E3BCAC4D2630508700B55BAC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC4C2630508700B55BAC /* LocationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E3BCAC3B262F741D00B55BAC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		E3BCAC3F26301F9D00B55BAC /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		E3BCAC42263022E200B55BAC /* RideQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideQuote.swift; sourceTree = "<group>"; };
+		E3BCAC45263023F900B55BAC /* RideQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideQuoteService.swift; sourceTree = "<group>"; };
+		E3BCAC482630437800B55BAC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E3BCAC4C2630508700B55BAC /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 			children = (
 				E3BCAC23262F6B8300B55BAC /* Main.storyboard */,
 				E3BCAC28262F6B8900B55BAC /* LaunchScreen.storyboard */,
+				E3BCAC4C2630508700B55BAC /* LocationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -94,6 +101,7 @@
 		E3BCAC34262F72AB00B55BAC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E3BCAC482630437800B55BAC /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				E3BCAC3B262F741D00B55BAC /* LocationService.swift */,
+				E3BCAC45263023F900B55BAC /* RideQuoteService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -187,10 +196,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BCAC46263023F900B55BAC /* RideQuoteService.swift in Sources */,
 				E3BCAC1E262F6B8300B55BAC /* AppDelegate.swift in Sources */,
 				E3BCAC38262F733800B55BAC /* Location.swift in Sources */,
 				E3BCAC3C262F741D00B55BAC /* LocationService.swift in Sources */,
 				E3BCAC43263022E200B55BAC /* RideQuote.swift in Sources */,
+				E3BCAC492630437800B55BAC /* HomeViewController.swift in Sources */,
+				E3BCAC4D2630508700B55BAC /* LocationCell.swift in Sources */,
 				E3BCAC20262F6B8300B55BAC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
