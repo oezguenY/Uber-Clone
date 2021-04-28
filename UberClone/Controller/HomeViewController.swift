@@ -101,16 +101,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         // Create custom annotation view with vehicle image
+        // we have to give the annotationView a reuseIdentifier, as it is expected by the dequeueReusableAnnotationView
         let reuseIdentifier = "VehicleAnnotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "VehicleAnnotation")
         // if we don't get back an annotationView...
         if annotationView == nil {
-            // we create it ourselves
+            // ...we create it ourselves
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
         } else {
+            // if annotationView is not nil, assign the annotation that was passed into the method to annotationView
             annotationView?.annotation = annotation
         }
+        // then pass the car image that we have in our assets to annotationView
         annotationView?.image = UIImage(named: "car")
+        // rotating annotationView by transforming the object
+        annotationView?.transform = CGAffineTransform(rotationAngle:
+        // creating random number from 0-360 with arc4random_uniform
+        // NOTE: the rotationAngle parameter only takes in radients. In order to transform
+        // the radients to degrees, we conduct following math operation
+        // As a result, the vehicle annotations will be randomly rotated
+        CGFloat(arc4random_uniform(360) * 180) / CGFloat.pi)
         
         return annotationView
     }
