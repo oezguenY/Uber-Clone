@@ -25,11 +25,11 @@ class RideQuoteService {
         let distance = location1.distance(from: location2)
         let minimumAmount = 3.0
         
-        
+        // seeding the data
         return [
-            RideQuote(thumbnail: "ride-shared", name: "Shared", capacity: "1-2", price: minimumAmount + distance * 0.5, time: Date()),
-            RideQuote(thumbnail: "ride-compact", name: "Shared", capacity: "4", price: minimumAmount + distance * 0.9, time: Date()),
-            RideQuote(thumbnail: "ride-large", name: "Shared", capacity: "6", price: minimumAmount + distance * 1.5, time: Date())
+            RideQuote(thumbnail: "ride-shared", name: "Shared", capacity: "1-2", price: minimumAmount + distance * 0.000005, time: Date()),
+            RideQuote(thumbnail: "ride-compact", name: "Compact", capacity: "4", price: minimumAmount + distance * 0.000007, time: Date()),
+            RideQuote(thumbnail: "ride-large", name: "Large", capacity: "6", price: minimumAmount + distance * 0.0000040, time: Date())
         ]
     }
 }

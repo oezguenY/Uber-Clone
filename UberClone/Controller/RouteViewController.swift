@@ -15,6 +15,8 @@ class RouteViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var selectRideButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    // we need a pickup and dropofflocation in order to generate a rideQuote
     var pickUpLocation: Location?
     var dropoffLocation: Location?
     var rideQuotes = [RideQuote]()
@@ -22,6 +24,7 @@ class RouteViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // delegate + datasource
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -33,9 +36,12 @@ class RouteViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // Populating properties for testing purposes
         let locations = LocationService.shared.returnLocations()
+        // in order to calculate a rideQuote, we need a pickup and dropoff location
+        // we know there are multiple locations we can pick from, we just pick first and second
         pickUpLocation = locations[0]
         dropoffLocation = locations[1]
         
+        // the getQuotes method takes in a pickuplocation and a dropofflocation and return an array of rideQuotes
         rideQuotes = RideQuoteService.shared.getQuotes(pickupLocation: pickUpLocation!, dropoffLocation: dropoffLocation!)
     }
     

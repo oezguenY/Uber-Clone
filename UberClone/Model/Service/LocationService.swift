@@ -13,6 +13,7 @@ class LocationService {
     static let shared = LocationService()
     private var recentLocations = [Location]()
     
+    // seeding the data. For testing purposes, we added a json File. When we initialize locationservice, we get the locations from the json file
     private init() {
         let locationsUrl = Bundle.main.url(forResource: "locations", withExtension: "json")!
         let data = try! Data(contentsOf: locationsUrl)
@@ -20,6 +21,8 @@ class LocationService {
         recentLocations = try! decoder.decode([Location].self, from: data)
     }
     
+    // since it's a private initiializer, we can't return locations. We have to do it here
+    // recentLocations was set in the init, here we are returining them
     func returnLocations() -> [Location] {
         return recentLocations
     }
