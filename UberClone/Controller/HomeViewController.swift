@@ -82,13 +82,38 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let coord3 = CLLocationCoordinate2D(latitude: lat, longitude: lng - offset)
         
         // create 3 vehicle annotations and add them to the mapView
+        // we are seeding the mapView for testing purposes
         mapView.addAnnotations([
             VehicleAnnotation(coordinate: coord1),
             VehicleAnnotation(coordinate: coord2),
             VehicleAnnotation(coordinate: coord3)
         ])
+       
     }
     
+    // Creating custom car annoatations
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // one annotation depicts us (with our location), so if
+        // the annotation is our user Location, don't do anything
+        
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        // Create custom annotation view with vehicle image
+        let reuseIdentifier = "VehicleAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "VehicleAnnotation")
+        // if we don't get back an annotationView...
+        if annotationView == nil {
+            // we create it ourselves
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        } else {
+            annotationView?.annotation = annotation
+        }
+        annotationView?.image = UIImage(named: "car")
+        
+        return annotationView
+    }
    
     
     
