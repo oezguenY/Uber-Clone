@@ -21,6 +21,8 @@
 		E3BCAC492630437800B55BAC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC482630437800B55BAC /* HomeViewController.swift */; };
 		E3BCAC4D2630508700B55BAC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC4C2630508700B55BAC /* LocationCell.swift */; };
 		E3BF75B4263994D0004D0B48 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF75B3263994D0004D0B48 /* LocationViewController.swift */; };
+		E3BF75B72639FF88004D0B48 /* RideQuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF75B62639FF87004D0B48 /* RideQuoteCell.swift */; };
+		E3BF75BA263A099B004D0B48 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF75B9263A099B004D0B48 /* RouteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		E3BCAC482630437800B55BAC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E3BCAC4C2630508700B55BAC /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		E3BF75B3263994D0004D0B48 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		E3BF75B62639FF87004D0B48 /* RideQuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideQuoteCell.swift; sourceTree = "<group>"; };
+		E3BF75B9263A099B004D0B48 /* RouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 				E3BCAC23262F6B8300B55BAC /* Main.storyboard */,
 				E3BCAC28262F6B8900B55BAC /* LaunchScreen.storyboard */,
 				E3BCAC4C2630508700B55BAC /* LocationCell.swift */,
+				E3BF75B62639FF87004D0B48 /* RideQuoteCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			children = (
 				E3BCAC482630437800B55BAC /* HomeViewController.swift */,
 				E3BF75B3263994D0004D0B48 /* LocationViewController.swift */,
+				E3BF75B9263A099B004D0B48 /* RouteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,7 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BF75B72639FF88004D0B48 /* RideQuoteCell.swift in Sources */,
 				E3BCAC46263023F900B55BAC /* RideQuoteService.swift in Sources */,
+				E3BF75BA263A099B004D0B48 /* RouteViewController.swift in Sources */,
 				E3BCAC1E262F6B8300B55BAC /* AppDelegate.swift in Sources */,
 				E3BCAC38262F733800B55BAC /* Location.swift in Sources */,
 				E3BCAC3C262F741D00B55BAC /* LocationService.swift in Sources */,

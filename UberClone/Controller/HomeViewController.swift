@@ -126,6 +126,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
    
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let locationVC = segue.destination as? LocationViewController {
+            locationVC.pickupLocation = currentUserLocation
+        }
+    }
     
     
 }
