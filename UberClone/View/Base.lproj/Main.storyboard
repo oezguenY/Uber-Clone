@@ -98,10 +98,10 @@
                                 <rect key="frame" x="30" y="74" width="20" height="20"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="la1-cv-Aud">
-                                <rect key="frame" x="0.0" y="193" width="414" height="640"/>
+                                <rect key="frame" x="0.0" y="185" width="414" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" rowHeight="60" id="87p-Kk-THQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" rowHeight="60" id="87p-Kk-THQ" customClass="LocationCell" customModule="UberClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="87p-Kk-THQ" id="UO5-YA-JEW">
@@ -138,6 +138,10 @@
                                                 <constraint firstItem="x4W-gA-jSm" firstAttribute="leading" secondItem="UO5-YA-JEW" secondAttribute="leading" constant="20" id="y3h-Jf-Kqk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLine1Lbl" destination="fJg-hL-ZOI" id="zU4-VU-Hei"/>
+                                            <outlet property="addressLine2Lbl" destination="TcA-pw-vey" id="m3I-aC-ekE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -145,11 +149,11 @@
                                     <outlet property="delegate" destination="5fO-rL-qJC" id="h4z-Le-Sum"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dot-dropoff" translatesAutoresizingMaskIntoConstraints="NO" id="pOm-GT-dkY">
-                                <rect key="frame" x="30" y="125" width="20" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot-dropoff" translatesAutoresizingMaskIntoConstraints="NO" id="pOm-GT-dkY">
+                                <rect key="frame" x="30" y="124" width="20" height="20"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbk-ak-7oy">
-                                <rect key="frame" x="65" y="144" width="319" height="29"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbk-ak-7oy">
+                                <rect key="frame" x="65" y="144" width="319" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -174,7 +178,7 @@
                             <constraint firstItem="la1-cv-Aud" firstAttribute="trailing" secondItem="Dyt-py-zSl" secondAttribute="trailing" id="7U4-tl-bca"/>
                             <constraint firstItem="uLZ-yU-U9q" firstAttribute="leading" secondItem="741-qx-rlY" secondAttribute="leading" id="DCh-cg-fPA"/>
                             <constraint firstItem="uLZ-yU-U9q" firstAttribute="top" secondItem="euH-Fw-9VZ" secondAttribute="bottom" constant="15" id="EIm-UN-bU1"/>
-                            <constraint firstItem="pOm-GT-dkY" firstAttribute="top" secondItem="fmn-gi-uaY" secondAttribute="bottom" constant="12" id="GeD-We-dFC"/>
+                            <constraint firstItem="pOm-GT-dkY" firstAttribute="top" secondItem="fmn-gi-uaY" secondAttribute="bottom" constant="30" id="GeD-We-dFC"/>
                             <constraint firstItem="pOm-GT-dkY" firstAttribute="trailing" secondItem="fmn-gi-uaY" secondAttribute="trailing" id="QhC-7c-NqH"/>
                             <constraint firstItem="741-qx-rlY" firstAttribute="centerY" secondItem="fmn-gi-uaY" secondAttribute="centerY" constant="-9" id="VbL-We-297"/>
                             <constraint firstItem="zbk-ak-7oy" firstAttribute="top" secondItem="uLZ-yU-U9q" secondAttribute="bottom" constant="7.5" id="Vth-fI-zMq"/>
@@ -189,6 +193,9 @@
                             <constraint firstItem="la1-cv-Aud" firstAttribute="top" secondItem="zbk-ak-7oy" secondAttribute="bottom" constant="20" id="ypQ-hd-hzU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dropoffTextfield" destination="zbk-ak-7oy" id="1aC-95-w08"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NH1-oN-4uS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

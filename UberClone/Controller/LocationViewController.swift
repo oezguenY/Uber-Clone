@@ -12,11 +12,14 @@ class LocationViewController: UIViewController, UITableViewDataSource {
     var locations = [Location]()
     var pickupLocation: Location?
     var dropoffLocation: Location?
+    @IBOutlet weak var dropoffTextfield: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locations = LocationService.shared.returnLocations()
+        dropoffTextfield.becomeFirstResponder()
     }
     
     
