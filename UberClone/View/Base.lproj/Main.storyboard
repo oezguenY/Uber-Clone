@@ -195,6 +195,7 @@
                     </view>
                     <connections>
                         <outlet property="dropoffTextfield" destination="zbk-ak-7oy" id="1aC-95-w08"/>
+                        <outlet property="tableView" destination="la1-cv-Aud" id="UVE-gh-toE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NH1-oN-4uS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
