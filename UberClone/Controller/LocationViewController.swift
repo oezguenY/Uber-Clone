@@ -77,6 +77,29 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
 
         return cell
     }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchResults.isEmpty {
+            let location = locations[indexPath.row]
+         performSegue(withIdentifier: "RouteSegue", sender: location)
+        } else {
+            // Convert search result -> Location object
+            let searchResult = searchResults[indexPath.row]
+            let searchRequest = MKLocalSearch.Request(completion: searchResult)
+            let search = MKLocalSearch(request: searchRequest)
+            search.start(completionHandler: {(response, error) in
+                if error == nil {
+                    if let dropOffPlacemark = response?.mapItems.first?.placemark {
+                        let location = Location(placemark: dropOffPlacemark)
+                        self.performSegue(withIdentifier: "RouteSegue", sender: location)
+                    }
+                }
+            })
+         
+        }
+    }
 
     // when this method is invoked, the searchCompleter is finished with its work and found results for us based on the query fragment that we set
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
@@ -89,6 +112,14 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func cancelTapped(_ sender: Any) {
         
         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let routeViewController = segue.destination as? RouteViewController, let dropoffLocation = sender as? Location {
+            routeViewController.pickUpLocation = pickupLocation
+            routeViewController.dropoffLocation = dropoffLocation
+        }
     }
     
 }

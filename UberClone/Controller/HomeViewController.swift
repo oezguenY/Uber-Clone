@@ -70,6 +70,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dropoffLocation = locations[indexPath.row]
+        performSegue(withIdentifier: "RouteSegue", sender: dropoffLocation)
     }
     
     
@@ -140,6 +141,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let locationVC = segue.destination as? LocationViewController {
             locationVC.pickupLocation = currentUserLocation
+        } else if let routeViewController = segue.destination as? RouteViewController, let dropoffLocation = sender as? Location {
+            routeViewController.pickUpLocation = currentUserLocation
+            routeViewController.dropoffLocation = dropoffLocation
         }
     }
     
