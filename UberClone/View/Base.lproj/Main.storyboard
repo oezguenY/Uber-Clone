@@ -71,9 +71,12 @@
                                     <constraint firstAttribute="height" constant="50" id="UdH-GO-foN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Select Shared">
+                                <state key="normal" title="Select Compact">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="cDx-Vw-ebP" kind="show" id="hSA-kv-Qlh"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fEx-VG-zGH">
                                 <rect key="frame" x="20" y="515" width="374" height="260"/>
@@ -189,31 +192,10 @@
             </objects>
             <point key="canvasLocation" x="4746" y="54"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="rQ0-8r-hXP">
-            <objects>
-                <viewController id="a60-hA-DfX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lab-3s-77L">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screen-route" translatesAutoresizingMaskIntoConstraints="NO" id="DYr-VA-c9k">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="cQl-fC-Ygc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ab2-Hs-Lz6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2736" y="1642"/>
-        </scene>
-        <!--View Controller-->
+        <!--Driver View Controller-->
         <scene sceneID="p5M-XE-scZ">
             <objects>
-                <viewController id="cDx-Vw-ebP" sceneMemberID="viewController">
+                <viewController id="cDx-Vw-ebP" customClass="DriverViewController" customModule="UberClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eyg-pB-EV9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,8 +243,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Ride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCe-3j-kix">
-                                <rect key="frame" x="293" y="825" width="51" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCe-3j-kix">
+                                <rect key="frame" x="296" y="825" width="45" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -284,6 +266,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ya-QG-vUU">
                                 <rect key="frame" x="50" y="780" width="91.5" height="50"/>
                                 <state key="normal" image="edit"/>
+                                <connections>
+                                    <action selector="editRideButtonDidTapped:" destination="cDx-Vw-ebP" eventType="touchUpInside" id="vUh-WM-1RQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9x-RN-gCg">
                                 <rect key="frame" x="272.5" y="780" width="91.5" height="50"/>
@@ -318,6 +303,9 @@
                                     <constraint firstAttribute="width" constant="40" id="xe9-X9-pXL"/>
                                 </constraints>
                                 <state key="normal" image="back-arrow"/>
+                                <connections>
+                                    <action selector="backButtonDidTapped:" destination="cDx-Vw-ebP" eventType="touchUpInside" id="zfl-pg-zFc"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating-5.0" translatesAutoresizingMaskIntoConstraints="NO" id="eVt-YD-0Kj">
                                 <rect key="frame" x="20" y="714" width="100" height="20"/>
@@ -391,31 +379,23 @@
                             <constraint firstItem="Z7A-uF-bTk" firstAttribute="top" secondItem="eVt-YD-0Kj" secondAttribute="bottom" constant="25" id="w6b-H6-ZdO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8kz-K8-M8j"/>
+                    <connections>
+                        <outlet property="backButton" destination="Gvi-VZ-nUU" id="liE-tj-6Si"/>
+                        <outlet property="carImageView" destination="gY9-HZ-gcM" id="xGK-C0-wOV"/>
+                        <outlet property="carLbl" destination="QTN-kQ-zu1" id="EU3-OS-aD9"/>
+                        <outlet property="driverImageView" destination="l2e-3u-cMC" id="zK4-zZ-784"/>
+                        <outlet property="driverNameLbl" destination="WBH-ln-tm0" id="P4U-KO-ekQ"/>
+                        <outlet property="etaLabel" destination="Ogg-M3-5Kf" id="y05-ZX-wzf"/>
+                        <outlet property="licenseLabel" destination="ymE-mP-vEF" id="MFz-su-SCL"/>
+                        <outlet property="mapView" destination="wzG-4x-uWv" id="Ca6-Bm-ssm"/>
+                        <outlet property="ratingImageView" destination="eVt-YD-0Kj" id="ACs-Ms-Sne"/>
+                        <outlet property="ratingLbl" destination="195-oi-4PZ" id="XUz-Be-8tb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="om7-vY-ou4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3576.811594202899" y="2461.6071428571427"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="oFS-Gy-5WV">
-            <objects>
-                <viewController id="5oh-b0-Y3Z" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HKl-RO-Mc0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screen-driver" translatesAutoresizingMaskIntoConstraints="NO" id="NTh-lp-BhW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="oHJ-vD-fCs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jbI-78-pKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2735" y="2462"/>
+            <point key="canvasLocation" x="5720" y="54"/>
         </scene>
         <!--Drop-off-->
         <scene sceneID="daB-Ij-Y4h">
@@ -713,8 +693,6 @@
         <image name="ride-compact" width="60" height="60"/>
         <image name="right-arrow" width="25" height="25"/>
         <image name="safety" width="12" height="12"/>
-        <image name="screen-driver" width="562.5" height="1218"/>
-        <image name="screen-route" width="562.5" height="1218"/>
         <image name="search" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

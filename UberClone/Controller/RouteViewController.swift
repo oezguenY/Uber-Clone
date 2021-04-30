@@ -42,12 +42,12 @@ class RouteViewController: UIViewController, UITableViewDelegate, UITableViewDat
         selectRideButton.layer.cornerRadius = 10.0
 
 
-//        // Populating properties for testing purposes
-//        let locations = LocationService.shared.returnLocations()
-//        // in order to calculate a rideQuote, we need a pickup and dropoff location
-//        // we know there are multiple locations we can pick from, we just pick first and second
-//        pickUpLocation = locations[0]
-//        dropoffLocation = locations[1]
+        // Populating properties for testing purposes
+        let locations = LocationService.shared.returnLocations()
+        // in order to calculate a rideQuote, we need a pickup and dropoff location
+        // we know there are multiple locations we can pick from, we just pick first and second
+        pickUpLocation = locations[0]
+        dropoffLocation = locations[1]
         
         pickupLbl.text = pickUpLocation?.title
         dropoffLbl.text = dropoffLocation?.title
@@ -153,5 +153,12 @@ class RouteViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print(annotationView!.image)
         return annotationView
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let driverViewController = segue.destination as? DriverViewController{
+                driverViewController.pickupLocation = pickUpLocation
+                driverViewController.dropoffLocation = dropoffLocation
+            }
+        }
 
 }
