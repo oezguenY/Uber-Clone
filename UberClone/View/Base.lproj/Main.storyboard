@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="pBp-ta-Bt1" customClass="RouteViewController" customModule="UberClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jQK-QI-vaG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QC6-Te-0cx">
@@ -23,7 +23,7 @@
                                 </constraints>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gq6-Jd-jYs">
-                                <rect key="frame" x="20" y="59" width="374" height="45"/>
+                                <rect key="frame" x="20" y="15" width="374" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4y-3L-r11">
                                         <rect key="frame" x="76.5" y="15.5" width="88" height="14"/>
@@ -62,12 +62,12 @@
                                 <state key="normal" image="back-arrow"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRx-aH-JQb">
-                                <rect key="frame" x="20" y="802" width="374" height="50"/>
+                                <rect key="frame" x="20" y="724" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.53378313779999997" green="0.37944054599999999" blue="0.94932872059999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UdH-GO-foN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Select Shared">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -164,14 +164,18 @@
                             <constraint firstItem="fEx-VG-zGH" firstAttribute="top" secondItem="QC6-Te-0cx" secondAttribute="bottom" constant="15" id="XRy-6s-pYd"/>
                             <constraint firstItem="Gq6-Jd-jYs" firstAttribute="top" secondItem="gdQ-HG-VUI" secondAttribute="top" constant="15" id="ZyS-Wb-Hd7"/>
                             <constraint firstItem="pTU-bn-zNI" firstAttribute="top" secondItem="QC6-Te-0cx" secondAttribute="bottom" constant="-60" id="mVx-2a-CSe"/>
-                            <constraint firstItem="gdQ-HG-VUI" firstAttribute="bottom" secondItem="KRx-aH-JQb" secondAttribute="bottom" constant="10" id="p1D-I6-OdG"/>
+                            <constraint firstItem="gdQ-HG-VUI" firstAttribute="bottom" secondItem="KRx-aH-JQb" secondAttribute="bottom" id="p1D-I6-OdG"/>
                             <constraint firstItem="gdQ-HG-VUI" firstAttribute="trailing" secondItem="KRx-aH-JQb" secondAttribute="trailing" constant="20" id="pbs-Tn-Blf"/>
                             <constraint firstItem="QC6-Te-0cx" firstAttribute="trailing" secondItem="gdQ-HG-VUI" secondAttribute="trailing" id="q8R-z1-zxQ"/>
                             <constraint firstItem="KRx-aH-JQb" firstAttribute="leading" secondItem="gdQ-HG-VUI" secondAttribute="leading" constant="20" id="rSF-6W-Ddh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="d9r-0c-kjM"/>
                     <connections>
                         <outlet property="backButton" destination="pTU-bn-zNI" id="ggA-dc-iya"/>
+                        <outlet property="dropoffLbl" destination="Dnb-QC-bAm" id="vM7-5E-bWJ"/>
+                        <outlet property="mapView" destination="QC6-Te-0cx" id="zUk-fU-o4l"/>
+                        <outlet property="pickupLbl" destination="H4y-3L-r11" id="X3A-tg-Vkw"/>
                         <outlet property="routeLabelContainer" destination="Gq6-Jd-jYs" id="tNe-rc-Mac"/>
                         <outlet property="selectRideButton" destination="KRx-aH-JQb" id="6ta-zx-oXs"/>
                         <outlet property="tableView" destination="fEx-VG-zGH" id="Eh0-Z3-H9C"/>
@@ -179,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xn-Kb-33d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944.9275362318842" y="1641.9642857142856"/>
+            <point key="canvasLocation" x="4746" y="54"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rQ0-8r-hXP">
@@ -215,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="om7-vY-ou4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="2462"/>
+            <point key="canvasLocation" x="3583" y="1642"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oFS-Gy-5WV">
@@ -359,6 +363,7 @@
                     <connections>
                         <outlet property="dropoffTextfield" destination="zbk-ak-7oy" id="INV-eD-m5A"/>
                         <outlet property="tableView" destination="la1-cv-Aud" id="cDs-G0-zYf"/>
+                        <segue destination="pBp-ta-Bt1" kind="show" identifier="RouteSegue" id="18s-3w-iCF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NH1-oN-4uS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -490,6 +495,7 @@
                     <connections>
                         <outlet property="searchButton" destination="ETp-P4-9w7" id="Vqw-sG-0xr"/>
                         <outlet property="tableView" destination="0qh-Ys-bcg" id="F4r-Yk-L1Z"/>
+                        <segue destination="pBp-ta-Bt1" kind="show" identifier="RouteSegue" id="BVv-Ew-gF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w87-80-VLC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -515,6 +521,9 @@
             <point key="canvasLocation" x="1944.9275362318842" y="53.571428571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="18s-3w-iCF"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="back-arrow" width="25" height="25"/>
         <image name="dot-dropoff" width="20" height="20"/>

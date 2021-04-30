@@ -68,6 +68,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dropoffLocation = locations[indexPath.row]
+    }
+    
+    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         // zoom in to the user location
         let distance = 200.0

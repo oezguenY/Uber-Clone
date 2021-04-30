@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E30646A9263A30780083BD91 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30646A8263A30780083BD91 /* LocationAnnotation.swift */; };
 		E30A425B26309799003F0ADD /* VehicleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30A425A26309799003F0ADD /* VehicleAnnotation.swift */; };
 		E3BCAC1E262F6B8300B55BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC1D262F6B8300B55BAC /* AppDelegate.swift */; };
 		E3BCAC20262F6B8300B55BAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCAC1F262F6B8300B55BAC /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E30646A8263A30780083BD91 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		E30A425A26309799003F0ADD /* VehicleAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAnnotation.swift; sourceTree = "<group>"; };
 		E3BCAC1A262F6B8300B55BAC /* UberClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BCAC1D262F6B8300B55BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				E3BCAC37262F733800B55BAC /* Location.swift */,
 				E3BCAC42263022E200B55BAC /* RideQuote.swift */,
 				E30A425A26309799003F0ADD /* VehicleAnnotation.swift */,
+				E30646A8263A30780083BD91 /* LocationAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3BF75B72639FF88004D0B48 /* RideQuoteCell.swift in Sources */,
+				E30646A9263A30780083BD91 /* LocationAnnotation.swift in Sources */,
 				E3BCAC46263023F900B55BAC /* RideQuoteService.swift in Sources */,
 				E3BF75BA263A099B004D0B48 /* RouteViewController.swift in Sources */,
 				E3BCAC1E262F6B8300B55BAC /* AppDelegate.swift in Sources */,
