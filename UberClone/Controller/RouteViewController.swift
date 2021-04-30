@@ -69,6 +69,16 @@ class RouteViewController: UIViewController, UITableViewDelegate, UITableViewDat
         displayRoute(sourceLocation: pickUpLocation!, destinationLocation: dropoffLocation!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func displayRoute(sourceLocation: Location, destinationLocation: Location){
             let sourceCoordinate = CLLocationCoordinate2D(latitude: sourceLocation.lat, longitude: sourceLocation.lng)
             let destinationCoordinate =  CLLocationCoordinate2D(latitude: destinationLocation.lat, longitude: destinationLocation.lng)
